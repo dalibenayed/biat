@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:p="http://primefaces.org/ui">
+   
+
+<h:head></h:head> 
+<body> 
+
+	<h:form id="form">
+
+		<p:panel id="panel" header="New Banque Centrale " style="margin-bottom:10px;">
+			<p:messages id="messages" />
+			<h:panelGrid columns="3">
+				<h:outputLabel for="name" value="name: *" />
+				<p:inputText id="name" value="#{banqueCentraleBean.banqueCentrale.name}"
+					required="true" label="Firstname">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+				<p:message for="name" />
+
+				<h:outputLabel for="pays" value="pays: *" />
+				<p:inputText id="pays" value="#{banqueCentraleBean.banqueCentrale.pays}"
+					required="true" label="pays" />
+				<p:message for="pays" />
+				<h:outputLabel for="monnaie locale " value="mon_loc: *" />
+				<p:inputText id="mon_loc" value="#{banqueCentraleBean.banqueCentrale.mon_loc}"
+					required="true" label="monnaie locale" />
+				<p:message for="mon_loc" />
+				
+				<h:outputLabel for="capital" value="capital: *" />
+				<p:inputText id="capital" value="#{banqueCentraleBean.banqueCentrale.capital}"
+					required="true" label="capital" />
+				<p:message for="capital" />
+				
+				<p:commandButton value="create "
+					action="#{banqueCentraleBean.createbanque()}" icon="ui-icon-check"
+					style="margin:0" />
+
+
+
+			</h:panelGrid>
+		</p:panel>
+
+
+
+	</h:form>
+</body> 
+</html>

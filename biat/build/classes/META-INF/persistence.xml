@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="biat">
+	<jta-data-source>java:/pidevDS</jta-data-source>
+	<class>biat.domain.Currency</class>
+	<class>biat.domain.Currencypairs</class>
+	<class>biat.domain.Trader</class>
+	<class>biat.domain.Account</class>
+	<class>biat.domain.News</class>
+	<class>biat.domain.Custommer</class>
+	<class>biat.domain.Corporate</class>
+	<class>biat.domain.Banque</class>
+	<class>biat.domain.BanqueCentrale</class>
+	<properties>
+	<property name="hibernate.hbm2ddl.auto" value="update"/>
+	</properties>
+	</persistence-unit>
+</persistence>

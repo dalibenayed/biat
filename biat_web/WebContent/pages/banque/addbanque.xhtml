@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+
+
+	<h:form id="form">
+
+		<p:panel id="panel" header="New Banque " style="margin-bottom:10px;">
+			<p:messages id="messages" />
+			<h:panelGrid columns="3">
+				<h:outputLabel for="nom" value="nom: *" />
+				<p:inputText id="firstname" value="#{custommerBean.banque.nom}"
+					required="true" label="Firstname">
+					<f:validateLength minimum="2" />
+				</p:inputText>
+				<p:message for="firstname" />
+
+				<h:outputLabel for="capital" value="capital: *" />
+				<p:inputText id="capital" value="#{custommerBean.banque.capital}"
+					required="true" label="capital" />
+				<p:message for="capital" />
+				
+			<h:selectOneListbox style="width: 231px; height: 27px;position:absolute;left:400px;top:325px;" value="#{custommerBean.banqueCentrale}" size="1">
+    <f:selectItems value="#{custommerBean.displayAldlBC()}" var="d" itemLabel="#{d.name}" />
+    <f:converter convertId="convertor" />
+</h:selectOneListbox>
+
+				<p:commandButton value="create "
+					action="#{custommerBean.createbanque()}" icon="ui-icon-check"
+					style="margin:0" />
+
+
+
+			</h:panelGrid>
+		</p:panel>
+
+
+
+	</h:form>
+
+</body>
+</html>
+
